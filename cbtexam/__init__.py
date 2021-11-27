@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-from cbtexam.users.routes import users
 from .config import Config
 
 db = SQLAlchemy()
@@ -15,8 +14,11 @@ def create_app(config_class=Config):
 
 
     from cbtexam.users.routes import users
+    from cbtexam.admin.routes import admin
 
     app.register_blueprint(users)   
+    app.register_blueprint(admin)
+
 
 
     return app
