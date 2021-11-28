@@ -81,13 +81,13 @@ def get_user():
             'status': 'fail',
             'message': resp
         }
-        return jsonify(response_object), 500
+        return jsonify(response_object), 401
     else:
         response_object = {
             'status': 'fail',
             'message': 'Provide a valid auth token.'
         }
-        return jsonify(response_object), 500
+        return jsonify(response_object), 401
 
 
 @admin.route('/admin/logout', methods=['POST'])
@@ -130,4 +130,3 @@ def admin_logout():
                 'message': 'Provide a valid auth token'
             }
             return jsonify(response_object), 403
-

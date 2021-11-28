@@ -49,9 +49,9 @@ class BlacklistToken(db.Model):
     blacklisted_on = db.Column(db.DateTime, nullable=False)
 
     def __init__(self, token):
-        self.token = token 
+        self.token = token
         self.blacklisted_on = datetime.now()
-    
+
     @staticmethod
     def check_blacklist(auth_token):
         # check whether auth token has been blacklisted
@@ -60,5 +60,3 @@ class BlacklistToken(db.Model):
             return True
         else:
             return False
-
-    
