@@ -25,7 +25,7 @@ def create_app(config_class=Config):
     app.register_blueprint(users)
     app.register_blueprint(admin)
 
-    from cbtexam.admin.models import Admin
+    from cbtexam.admin.models import BlacklistToken
     # with app.app_context():
     #     db.create_all()
 
